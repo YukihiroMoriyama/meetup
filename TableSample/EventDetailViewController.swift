@@ -1,6 +1,4 @@
-    @IBAction func join() {
-        
-    }//
+//
 //  EventDetailViewController.swift
 //  TableSample
 //
