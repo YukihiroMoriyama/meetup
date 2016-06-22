@@ -50,8 +50,19 @@ class EventInfoTableViewController: UITableViewController {
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("toEventDetailViewController", sender: indexPath.row)
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "toEventDetailViewController") {
+            let vc: EventDetailViewController = (segue.destinationViewController as? EventDetailViewController)!
+            vc.index = sender as! Int
+            
+            
+        }
 
     }
     

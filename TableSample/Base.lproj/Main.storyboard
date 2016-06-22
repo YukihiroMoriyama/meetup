@@ -31,7 +31,7 @@
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="1zE-9k-vbN"/>
                     <navigationItem key="navigationItem" title="イベント情報" id="ImV-bQ-qd8"/>
                     <connections>
-                        <segue destination="dtf-sT-9Tq" kind="show" identifier="eventDetail" id="rCi-NF-bdv"/>
+                        <segue destination="dtf-sT-9Tq" kind="show" identifier="toEventDetailViewController" id="rCi-NF-bdv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFC-WR-0KV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,7 +41,7 @@
         <!--Title-->
         <scene sceneID="hjs-em-yVC">
             <objects>
-                <viewController id="dtf-sT-9Tq" sceneMemberID="viewController">
+                <viewController id="dtf-sT-9Tq" customClass="EventDetailViewController" customModule="TableSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AEp-ku-s64"/>
                         <viewControllerLayoutGuide type="bottom" id="mYJ-4x-Pkx"/>
@@ -57,11 +57,17 @@
                                 <rect key="frame" x="53" y="565" width="108" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="興味あり"/>
+                                <connections>
+                                    <action selector="interest" destination="dtf-sT-9Tq" eventType="touchUpInside" id="Nmg-De-4Bx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVA-ge-0N4">
                                 <rect key="frame" x="214" y="565" width="108" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="参加する"/>
+                                <connections>
+                                    <action selector="join" destination="dtf-sT-9Tq" eventType="touchUpInside" id="fLM-dk-gCx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD8-oa-F9G">
                                 <rect key="frame" x="138" y="215" width="99" height="48"/>
@@ -85,6 +91,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="LnX-9a-Lw5"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="VD8-oa-F9G" id="4dp-Iy-eVS"/>
+                        <outlet property="descriptionLabel" destination="cbK-SY-F2M" id="A5s-4D-yNP"/>
+                        <outlet property="imageView" destination="X5H-EN-CMh" id="tTX-3X-Tgh"/>
+                        <outlet property="titleNavigationItem" destination="LnX-9a-Lw5" id="n3h-W1-0nL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJz-xc-JPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,6 +261,20 @@
                     <view key="view" contentMode="scaleToFill" id="KuP-ZR-BZb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYt-h4-gQe">
+                                <rect key="frame" x="67" y="91" width="240" height="160"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Self Intoroduce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMc-gw-J46">
+                                <rect key="frame" x="20" y="276" width="335" height="104"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACT-F0-WFt">
+                                <rect key="frame" x="83" y="343" width="240" height="128"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="309-2W-dEX"/>
