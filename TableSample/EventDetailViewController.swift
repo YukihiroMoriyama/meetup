@@ -7,24 +7,39 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EventDetailViewController: UIViewController {
     
+    let realm = try! Realm()
     var index: Int!
     
-    @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleNavigationItem: UINavigationItem!
+    @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
-    
+    @IBOutlet var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let event = realm.objects(Event)[index]
+        
+        titleNavigationItem.title = event.name
+        descriptionTextView.text = event.desc
+        dateLabel.text = dateString(event.date)
+        imageView.image = UIImage(named: event.imgName + ".jpg")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func dateString(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        let dateString: String = dateFormatter.stringFromDate(date)
+        return dateString
     }
 
     @IBAction func interest() {

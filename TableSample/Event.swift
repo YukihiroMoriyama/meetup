@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Event {
+class Event: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
-    dynamic var description: String = ""
+    dynamic var desc: String = ""
     dynamic var date: NSDate = NSDate()
-    dynamic var users: [Int] = [] // TODO: クラスにすべき？
+    dynamic var imgName: String = ""
 }

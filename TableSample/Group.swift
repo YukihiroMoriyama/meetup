@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Group {
+class Group: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
-    dynamic var category: Int = 0 // TODO: クラスにすべき？
+    dynamic var imgName: String = ""
+    dynamic var category: Category!
 }

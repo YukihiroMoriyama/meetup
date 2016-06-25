@@ -7,19 +7,35 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EventInfoTableViewController: UITableViewController {
     
-    var array: [String] = ["甲子園好き集まれ", "1", "1", "1", "1"]
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let config = Realm.Configuration(
+//            schemaVersion: 1,
+//            migrationBlock: { migration, oldSchemaVersion in
+//                if (oldSchemaVersion < 1) {}
+//        })
+//        Realm.Configuration.defaultConfiguration = config
+        
+        let test = Test()
+        test.addEvent()
+        test.addCategory()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,18 +51,19 @@ class EventInfoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
         // #warning Incomplete implementation, return the number of rows
-        return array.count
+        return realm.objects(Event).count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "Cell")
         
-        // Configure the cell...
-        cell.imageView?.image = UIImage(named: "yakyu_2.jpg")
-        cell.textLabel?.text = "\(array[indexPath.row])"
-        cell.detailTextLabel?.text = "今年も甲子園の時期がやってきました。一時の暑い夏のために流した多くの涙と汗。"
+        let event = realm.objects(Event)[indexPath.row]
+        
+        cell.imageView?.image = UIImage(named: event.imgName + ".jpg")
+        cell.textLabel?.text = event.name
+        cell.detailTextLabel?.text = event.desc
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell
     }
@@ -60,8 +77,6 @@ class EventInfoTableViewController: UITableViewController {
         if (segue.identifier == "toEventDetailViewController") {
             let vc: EventDetailViewController = (segue.destinationViewController as? EventDetailViewController)!
             vc.index = sender as! Int
-            
-            
         }
 
     }
