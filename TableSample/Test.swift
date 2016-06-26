@@ -48,16 +48,16 @@ class Test {
         category2.name = "人気"
      
         let category3 = Category()
-        category1.id = 3
-        category1.name = "恋愛"
+        category3.id = 3
+        category3.name = "恋愛"
         
         let category4 = Category()
-        category2.id = 4
-        category2.name = "地元"
+        category4.id = 4
+        category4.name = "地元"
         
         let category5 = Category()
-        category3.id = 5
-        category3.name = "エンタメ"
+        category5.id = 5
+        category5.name = "エンタメ"
         
         try! realm.write {
             realm.add(category1)
