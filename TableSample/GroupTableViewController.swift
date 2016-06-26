@@ -32,6 +32,13 @@ class GroupTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let groupCell = sender as? GroupCell,
+            let groupDetailPage = segue.destinationViewController as? GroupDetailViewController {
+            groupDetailPage.group = groupCell
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
