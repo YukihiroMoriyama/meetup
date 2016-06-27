@@ -10,12 +10,8 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     
-    @IBOutlet var ScrollView: UIScrollView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ScrollView.contentSize.height = 1000
         
     }
     
