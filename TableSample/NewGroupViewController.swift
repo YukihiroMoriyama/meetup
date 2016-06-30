@@ -22,12 +22,12 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gesture = UITapGestureRecognizer(target: self, action: Selector("didSelectedIconImageView"))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(NewGroupViewController.didSelectedIconImageView))
         iconImageView.addGestureRecognizer(gesture)
         
         self.titleTextField.delegate = self
 
-        let search = realm.objects(Category)
+        let search = realm.objects(Category).filter("id > 2")
         for c in search {
             pickerData.append(c.name)
         }
@@ -53,7 +53,8 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCategory = row + 1
+        selectedCategory = row + 3
+        print(selectedCategory)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -63,24 +64,22 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func createGroup() {
+        if selectedCategory == 0 {
+            selectedCategory = 3
+        }
+        
         let group = Group()
         group.id = realm.objects(Group).count + 1
         group.name = titleTextField.text!
         group.imgName = "cafe_2" // TODO: 選択した画像にする
+        
         group.category = realm.objects(Category).filter("id == \(selectedCategory)").first
         
         try! realm.write {
             realm.add(group)
         }
         
-        let search = realm.objects(Group)
-        print(search)
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func cancel() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func didSelectedIconImageView() {

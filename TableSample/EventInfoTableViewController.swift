@@ -23,9 +23,9 @@ class EventInfoTableViewController: UITableViewController {
 //        })
 //        Realm.Configuration.defaultConfiguration = config
         
-//        let test = Test()
-//        test.addEvent()
-//        test.addCategory()
+        let test = Test()
+        test.addEvent()
+        test.addCategory()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

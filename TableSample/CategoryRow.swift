@@ -12,8 +12,11 @@ import RealmSwift
 class CategoryRow: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     let realm = try! Realm()
+    var groups: [Group] = []
     var category: Int! {
         didSet {
+            groups.removeAll()
+            filterGroupByCategory()
             groupCollectionView.reloadData()
         }
     }
@@ -21,16 +24,16 @@ class CategoryRow: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollec
     @IBOutlet weak var groupCollectionView: UICollectionView!
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return groups.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("groupCell", forIndexPath: indexPath) as! GroupCell
         
-        if let category = self.category {
-            cell.imageView.image = UIImage(named: "cafe_2.jpg")
-            cell.titleLabel.text = "\(category)-\(indexPath.row)"
-        }
+        cell.group = groups[indexPath.row]
+        cell.imageView.image = UIImage(named: "\(groups[indexPath.row].imgName).jpg")
+        cell.titleLabel.text = "\(groups[indexPath.row].name)"
+
         return cell
     }
     
@@ -38,11 +41,16 @@ class CategoryRow: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollec
         print(indexPath.row)
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let itemsPerRow:CGFloat = 4
-//        let hardCodedPadding:CGFloat = 5
-//        let itemWidth = (groupCollectionView.bounds.width / itemsPerRow) - hardCodedPadding
-//        let itemHeight = groupCollectionView.bounds.height - (2 * hardCodedPadding)
-//        return CGSize(width: itemWidth, height: itemHeight)
-//    }
+    func filterGroupByCategory() {
+        let result = realm.objects(Group)
+        print(result.count)
+
+        for re in result {
+            print(re)
+            if category == re.category.id {
+                groups.append(re)
+            }
+        }
+        print(groups)
+    }
 }

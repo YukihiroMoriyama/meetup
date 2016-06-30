@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    let realm = try! Realm()
     var group: GroupCell? = nil
     
     @IBOutlet var groupImageView: UIImageView!
@@ -48,7 +50,12 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cellSize:CGFloat = self.view.frame.size.width/2-2
+        let cellSize:CGFloat = self.memberCollectionView.contentSize.width / 2 - 2
         return CGSizeMake(cellSize, cellSize)
+    }
+    
+    @IBAction func join() {
+        print(group)
+        
     }
 }

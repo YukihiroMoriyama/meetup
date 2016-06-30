@@ -21,10 +21,10 @@ class GroupTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1    }
+        return 1
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! CategoryRow
         
         cell.category = realm.objects(Category)[indexPath.section].id
@@ -45,7 +45,6 @@ class GroupTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        //        super.viewWillAppear(true)
     }
     
     override func didReceiveMemoryWarning() {
