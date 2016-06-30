@@ -15,4 +15,5 @@ class Event: Object {
     dynamic var desc: String = ""
     dynamic var date: NSDate = NSDate()
     dynamic var imgName: String = ""
+    // TODO: 参加メンバを入れる必要あり？
 }

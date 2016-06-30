@@ -14,4 +14,5 @@ class Group: Object {
     dynamic var name: String = ""
     dynamic var imgName: String = ""
     dynamic var category: Category!
+    // TODO: メンバを入れる必要あり？
 }
