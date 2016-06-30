@@ -14,6 +14,7 @@
 		E21FC4FB1D1E537200A9CF1D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21FC4FA1D1E537200A9CF1D /* CustomCell.swift */; };
 		E22B1B471D23B451009B48C9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B1B461D23B451009B48C9 /* ChatViewController.swift */; };
 		E22B1B491D23B556009B48C9 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B1B481D23B556009B48C9 /* FriendsTableViewController.swift */; };
+		E22B1B6D1D24B609009B48C9 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B1B6C1D24B609009B48C9 /* Friend.swift */; };
 		E256FAB11D1A2F3C0008316D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256FAB01D1A2F3C0008316D /* Event.swift */; };
 		E291F8711D1A31AC0067719E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291F8701D1A31AC0067719E /* User.swift */; };
 		E291F8731D1A32730067719E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291F8721D1A32730067719E /* Group.swift */; };
@@ -50,6 +51,7 @@
 		E21FC4FA1D1E537200A9CF1D /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E22B1B461D23B451009B48C9 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E22B1B481D23B556009B48C9 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		E22B1B6C1D24B609009B48C9 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		E256FAB01D1A2F3C0008316D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E291F8701D1A31AC0067719E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E291F8721D1A32730067719E /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				E291F8701D1A31AC0067719E /* User.swift */,
 				E291F8721D1A32730067719E /* Group.swift */,
 				E21FC4F61D1E313400A9CF1D /* Category.swift */,
+				E22B1B6C1D24B609009B48C9 /* Friend.swift */,
 				E21FC4FA1D1E537200A9CF1D /* CustomCell.swift */,
 				E2921D711D1E9AB800E516F9 /* GroupCell.swift */,
 				E2921D751D1F85A400E516F9 /* MemberCell.swift */,
@@ -309,6 +312,7 @@
 				E291F8751D1A36B20067719E /* EventDetailViewController.swift in Sources */,
 				E21FC4F71D1E313400A9CF1D /* Category.swift in Sources */,
 				E21FC4F51D1E2C2C00A9CF1D /* MyPageViewController.swift in Sources */,
+				E22B1B6D1D24B609009B48C9 /* Friend.swift in Sources */,
 				E2921D761D1F85A400E516F9 /* MemberCell.swift in Sources */,
 				E291F8711D1A31AC0067719E /* User.swift in Sources */,
 				E2FEF2881D17C0C100CAEB57 /* EventInfoTableViewController.swift in Sources */,

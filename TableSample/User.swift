@@ -13,5 +13,5 @@ class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var age: Int = 0
-    let friends = List<User>()
+    let friends = List<Friend>()
 }
