@@ -12,5 +12,4 @@ import JSQMessagesViewController
 
 class Friend: Object {
     dynamic var user: User?
-    dynamic var messages: [JSQMessage]?
 }

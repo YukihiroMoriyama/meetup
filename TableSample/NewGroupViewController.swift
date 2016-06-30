@@ -1,4 +1,4 @@
-//
+    //
 //  NewGroupViewController.swift
 //  TableSample
 //
@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     let realm = try! Realm()
     var pickerData: [String] = []
@@ -21,6 +21,9 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: Selector("didSelectedIconImageView"))
+        iconImageView.addGestureRecognizer(gesture)
         
         self.titleTextField.delegate = self
 
@@ -63,7 +66,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let group = Group()
         group.id = realm.objects(Group).count + 1
         group.name = titleTextField.text!
-        group.imgName = "cafe_2"
+        group.imgName = "cafe_2" // TODO: 選択した画像にする
         group.category = realm.objects(Category).filter("id == \(selectedCategory)").first
         
         try! realm.write {
@@ -78,5 +81,27 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func cancel() {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func didSelectedIconImageView() {
+        self.pickImageFromLibrary()
+    }
+    
+    func pickImageFromLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let controller = UIImagePickerController()
+            controller.delegate = self
+            controller.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            iconImageView.contentMode = .ScaleAspectFit
+            iconImageView.image = pickedImage
+        }
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
