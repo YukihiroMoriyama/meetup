@@ -25,6 +25,7 @@
 		E2921D741D1F852700E516F9 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2921D731D1F852700E516F9 /* GroupDetailViewController.swift */; };
 		E2921D761D1F85A400E516F9 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2921D751D1F85A400E516F9 /* MemberCell.swift */; };
 		E2921D7A1D1F90B400E516F9 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2921D791D1F90B400E516F9 /* NewEventViewController.swift */; };
+		E2D4D29D1D2A1E4A00D5208C /* Sexuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D4D29C1D2A1E4A00D5208C /* Sexuality.swift */; };
 		E2FEF2741D17B47A00CAEB57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEF2731D17B47A00CAEB57 /* AppDelegate.swift */; };
 		E2FEF2791D17B47A00CAEB57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FEF2771D17B47A00CAEB57 /* Main.storyboard */; };
 		E2FEF27B1D17B47A00CAEB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FEF27A1D17B47A00CAEB57 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		E2921D731D1F852700E516F9 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		E2921D751D1F85A400E516F9 /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		E2921D791D1F90B400E516F9 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		E2D4D29C1D2A1E4A00D5208C /* Sexuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sexuality.swift; sourceTree = "<group>"; };
 		E2FEF2701D17B47A00CAEB57 /* TableSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FEF2731D17B47A00CAEB57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2FEF2781D17B47A00CAEB57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				E2921D711D1E9AB800E516F9 /* GroupCell.swift */,
 				E2921D751D1F85A400E516F9 /* MemberCell.swift */,
 				E21FC4F01D1E1E8000A9CF1D /* Test.swift */,
+				E2D4D29C1D2A1E4A00D5208C /* Sexuality.swift */,
 			);
 			path = TableSample;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				E21FC4F71D1E313400A9CF1D /* Category.swift in Sources */,
 				E21FC4F51D1E2C2C00A9CF1D /* MyPageViewController.swift in Sources */,
 				E22B1B6D1D24B609009B48C9 /* Friend.swift in Sources */,
+				E2D4D29D1D2A1E4A00D5208C /* Sexuality.swift in Sources */,
 				E2921D761D1F85A400E516F9 /* MemberCell.swift in Sources */,
 				E291F8711D1A31AC0067719E /* User.swift in Sources */,
 				E2FEF2881D17C0C100CAEB57 /* EventInfoTableViewController.swift in Sources */,

@@ -13,5 +13,7 @@ class User: Object {
     dynamic var id: Int = 0
     dynamic var name: String = ""
     dynamic var age: Int = 0
+    dynamic var desc: String = ""
+    dynamic var imgName: String = ""
     let friends = List<Friend>()
 }
