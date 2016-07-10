@@ -15,13 +15,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="77" id="60L-84-Jjx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="77" id="60L-84-Jjx" customClass="InfoCustomCell" customModule="TableSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="60L-84-Jjx" id="edL-Ut-wFC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Obd-S1-uYA" customClass="CircleImageView" customModule="TableSample" customModuleProvider="target">
+                                            <rect key="frame" x="17" y="3" width="70" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HU-lw-kja">
+                                            <rect key="frame" x="102" y="37" width="244" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k6-7e-9YB">
+                                            <rect key="frame" x="102" y="13" width="244" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="circleImageView" destination="Obd-S1-uYA" id="2uQ-lr-wMm"/>
+                                    <outlet property="descLabel" destination="2HU-lw-kja" id="t2z-b8-tIo"/>
+                                    <outlet property="titleLabel" destination="1k6-7e-9YB" id="gFO-cF-mgg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -141,13 +163,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="77" id="JBj-ym-wRz" customClass="ChatCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="77" id="JBj-ym-wRz" customClass="InfoCustomCell" customModule="TableSample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JBj-ym-wRz" id="m1r-6O-ZWa">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bn7-rF-p4a" customClass="CircleImageView" customModule="TableSample" customModuleProvider="target">
+                                            <rect key="frame" x="17" y="3" width="70" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-WU-Fp1">
+                                            <rect key="frame" x="102" y="27" width="244" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="circleImageView" destination="Bn7-rF-p4a" id="9mx-os-0ce"/>
+                                    <outlet property="titleLabel" destination="dZ5-WU-Fp1" id="ddU-88-byq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -249,7 +286,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="127" height="125"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7L6-dx-sdg">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7L6-dx-sdg" customClass="CircleImageView" customModule="TableSample" customModuleProvider="target">
                                                                 <rect key="frame" x="13" y="8" width="100" height="90"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-XI-kh9">
@@ -262,7 +299,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <connections>
-                                                        <outlet property="imageView" destination="7L6-dx-sdg" id="W53-rU-TxW"/>
+                                                        <outlet property="circleImageView" destination="7L6-dx-sdg" id="LV9-4J-V8D"/>
                                                         <outlet property="titleLabel" destination="MKZ-XI-kh9" id="bIq-mN-dv5"/>
                                                         <segue destination="czK-1C-0lU" kind="show" id="CeN-89-vcF"/>
                                                     </connections>
@@ -409,7 +446,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-zW-eh3">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-zW-eh3" customClass="CircleImageView" customModule="TableSample" customModuleProvider="target">
                                                     <rect key="frame" x="9" y="19" width="182" height="162"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -432,7 +469,7 @@
                                             <constraint firstItem="o8B-zW-eh3" firstAttribute="top" secondItem="ZBU-NL-LH6" secondAttribute="topMargin" constant="11" id="nOi-Zj-mEM"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="o8B-zW-eh3" id="yeU-bA-mD2"/>
+                                            <outlet property="circleImageView" destination="o8B-zW-eh3" id="UdI-Mm-In8"/>
                                             <outlet property="label" destination="Ebu-jz-k4s" id="FGA-Pk-vWT"/>
                                         </connections>
                                     </collectionViewCell>
@@ -456,9 +493,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gLD-Uj-71N">
-                                <rect key="frame" x="123" y="72" width="128" height="128"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FSc-jV-zx8">
+                                <rect key="frame" x="0.0" y="72" width="375" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -471,7 +507,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="groupImageView" destination="gLD-Uj-71N" id="rYB-Cq-3Lu"/>
                         <outlet property="memberCollectionView" destination="wEb-c3-Jcl" id="tNy-fg-Ugt"/>
                         <outlet property="titleNavigationItem" destination="zAa-iL-xpU" id="f9l-D5-IOU"/>
                     </connections>

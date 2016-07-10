@@ -10,6 +10,6 @@ import UIKit
 
 class GroupCell: UICollectionViewCell {
     var group: Group!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var circleImageView: CircleImageView!
     @IBOutlet weak var titleLabel: UILabel!    
 }

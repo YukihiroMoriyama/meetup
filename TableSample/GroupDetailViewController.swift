@@ -21,7 +21,7 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groupImageView.image = group?.imageView.image
+        groupImageView.image = group?.circleImageView.image
         titleNavigationItem.title = group?.titleLabel.text
         // Do any additional setup after loading the view.
     }
@@ -35,7 +35,7 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = memberCollectionView.dequeueReusableCellWithReuseIdentifier("member", forIndexPath: indexPath) as! MemberCell
         
-        cell.imageView.image = UIImage(named: "kao_l2_1.jpg")
+        cell.circleImageView.image = UIImage(named: "imgres.jpg")
         cell.label.text = "1"
         
         return cell

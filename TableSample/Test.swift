@@ -24,7 +24,7 @@ class Test {
         
         event.desc = "今年も甲子園の時期がやってきました。一時の暑い夏のために流した多くの涙と汗。夢と青春を費やしてきた野球少年たちを一緒に応援しましょう！！"
         
-        event.imgName = "yakyu_2"
+        event.imgName = "imgres"
         
         let realm = try! Realm()
         

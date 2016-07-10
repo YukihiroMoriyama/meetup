@@ -38,12 +38,14 @@ class FriendsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell", forIndexPath: indexPath) as! InfoCustomCell
         
-        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "ChatCell")
+//        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "ChatCell")
         
-        cell.imageView?.image = UIImage(named: "kao_l2_1.jpg")
-        cell.textLabel?.text = "けいこ"
+        cell.circleImageView.image = UIImage(named: "kao_l2_1.jpg")
+        cell.titleLabel.text = "けいこ"
+//        cell.imageView?.image = UIImage(named: "kao_l2_1.jpg")
+//        cell.textLabel?.text = "けいこ"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell

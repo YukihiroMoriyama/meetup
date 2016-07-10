@@ -57,13 +57,19 @@ class EventInfoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "Cell")
+//        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "Cell")
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InfoCustomCell
         
         let event = realm.objects(Event)[indexPath.row]
+
+        cell.circleImageView.image = UIImage(named: event.imgName + ".jpg")
+        cell.titleLabel.text = event.name
+        cell.descLabel.text = event.desc
         
-        cell.imageView?.image = UIImage(named: event.imgName + ".jpg")
-        cell.textLabel?.text = event.name
-        cell.detailTextLabel?.text = event.desc
+//        cell.imageView?.image = UIImage(named: event.imgName + ".jpg")
+//        cell.textLabel?.text = event.name
+//        cell.detailTextLabel?.text = event.desc
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell
     }

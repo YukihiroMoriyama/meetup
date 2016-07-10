@@ -9,6 +9,6 @@
 import UIKit
 
 class MemberCell: UICollectionViewCell {
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var circleImageView: CircleImageView!
     @IBOutlet var label: UILabel!
 }
