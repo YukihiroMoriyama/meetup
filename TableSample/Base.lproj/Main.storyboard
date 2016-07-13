@@ -340,21 +340,32 @@
             </objects>
             <point key="canvasLocation" x="-630.5" y="1961.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Timeline-->
         <scene sceneID="jPu-gU-UXH">
             <objects>
-                <tableViewController id="zEm-he-SFR" sceneMemberID="viewController">
+                <tableViewController id="zEm-he-SFR" customClass="EventTimelineTableViewController" customModule="TableSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KqB-Nh-grp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lNr-n7-gLn">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Event" rowHeight="77" id="lNr-n7-gLn">
+                                <rect key="frame" x="0.0" y="92" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lNr-n7-gLn" id="Mf9-gZ-0ah">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-e0-PiM" customClass="CircleImageView" customModule="TableSample" customModuleProvider="target">
+                                            <rect key="frame" x="17" y="3" width="70" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrr-wm-VTs">
+                                            <rect key="frame" x="102" y="27" width="244" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -363,7 +374,7 @@
                             <outlet property="delegate" destination="zEm-he-SFR" id="j4J-0E-cRH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="NWk-Ac-tYU"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="NWk-Ac-tYU"/>
                     <connections>
                         <segue destination="fqG-p3-qDr" kind="show" id="hc5-li-xrP"/>
                     </connections>
@@ -372,22 +383,44 @@
             </objects>
             <point key="canvasLocation" x="-617.5" y="423.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Title-->
         <scene sceneID="xao-re-OaQ">
             <objects>
-                <tableViewController id="fqG-p3-qDr" sceneMemberID="viewController">
+                <tableViewController id="fqG-p3-qDr" customClass="TimelineTableViewController" customModule="TableSample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MNW-7y-WuQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="maf-dV-l9r">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Tweet" rowHeight="100" id="maf-dV-l9r" customClass="TimelineCell" customModule="TableSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="maf-dV-l9r" id="rl2-mS-JDL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cY-aJ-ufi">
+                                            <rect key="frame" x="95" y="8" width="244" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdI-a3-CSp">
+                                            <rect key="frame" x="95" y="24" width="272" height="67"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvv-Ee-wYK" customClass="CircleImageView" customModule="TableSample" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="10" width="80" height="80"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="circleImageView" destination="uvv-Ee-wYK" id="y20-y6-qPl"/>
+                                    <outlet property="contentTextView" destination="vdI-a3-CSp" id="Uft-Ed-6qy"/>
+                                    <outlet property="nameLabel" destination="2cY-aJ-ufi" id="m4u-eH-gNR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -395,6 +428,7 @@
                             <outlet property="delegate" destination="fqG-p3-qDr" id="QuP-nh-Fmn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="yfg-nb-1dZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otw-kd-0Uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
