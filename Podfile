@@ -6,6 +6,6 @@ target 'TableSample' do
  pod 'JSQMessagesViewController'
  pod 'RealmSwift'
  pod "RMPScrollingMenuBarController"
+ pod 'ObjectMapper', '~> 1.3'
+ pod 'SwiftyJSON'
 end
-
-

@@ -24,6 +24,7 @@ class EventInfoTableViewController: UITableViewController {
 //        Realm.Configuration.defaultConfiguration = config
         
 //        let test = Test()
+//        test.addUsers()
 //        test.addEvent()
 //        test.addCategory()
 

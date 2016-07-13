@@ -6,8 +6,8 @@
 //  Copyright © 2016年 YukihiroMoriyama. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
+import ObjectMapper
 
 class Event: Object {
     dynamic var id: Int = 0
@@ -16,4 +16,18 @@ class Event: Object {
     dynamic var date: NSDate = NSDate()
     dynamic var imgName: String = ""
     let members = List<User>()
+    
+    required convenience init?(_ map: Map) {
+        self.init()
+        mapping(map)
+    }
+}
+
+extension Event: Mappable {
+    func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        desc <- map["desc"]
+        imgName <- map["imgName"]
+    }
 }

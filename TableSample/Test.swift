@@ -8,6 +8,8 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
+import ObjectMapper
 
 class Test {
     func addEvent() {
@@ -37,37 +39,41 @@ class Test {
     }
     
     func addCategory() {
+        let path = NSBundle.mainBundle().pathForResource("category", ofType: "json")!
+        let jsonData = NSData(contentsOfFile: path)!
+        
+        let json = JSON(data: jsonData)
+        
         let realm = try! Realm()
         
-        let category1 = Category()
-        category1.id = 1
-        category1.name = "おすすめ"
-        
-        let category2 = Category()
-        category2.id = 2
-        category2.name = "人気"
-     
-        let category3 = Category()
-        category3.id = 3
-        category3.name = "恋愛"
-        
-        let category4 = Category()
-        category4.id = 4
-        category4.name = "地元"
-        
-        let category5 = Category()
-        category5.id = 5
-        category5.name = "エンタメ"
-        
         try! realm.write {
-            realm.add(category1)
-            realm.add(category2)
-            realm.add(category3)
-            realm.add(category4)
-            realm.add(category5)
+            for (_, subJson):(String, JSON) in json {
+                let category: Category? = Mapper<Category>().map(subJson.dictionaryObject)
+                realm.add(category!)
+            }
         }
         
-        let search = realm.objects(Category)
+        let search = realm.objects(User)
         print(search)
+    }
+    
+    func addUsers() {
+        let path = NSBundle.mainBundle().pathForResource("users", ofType: "json")!
+        let jsonData = NSData(contentsOfFile: path)!
+        
+        let json = JSON(data: jsonData)
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            for (_, subJson):(String, JSON) in json {
+                let user: User? = Mapper<User>().map(subJson.dictionaryObject)
+                realm.add(user!)
+            }
+        }
+        
+        let search = realm.objects(User)
+        print(search)
+        
     }
 }

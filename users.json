@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "おしげ",
+    "minority": "バイ",
+    "age": 22,
+    "desc": "：KAuniv/Sports/Cat/Dog",
+    "imgName": "user1"
+  },
+  {
+    "id": 2,
+    "name": "ぽっきー",
+    "minority": "ゲイ",
+    "age": 31,
+    "desc": "KAuniv/Sports/Cat/Dog",
+    "imgName": "user2"
+  },
+  {
+    "id": 3,
+    "name": "あき",
+    "minority": "ゲイ",
+    "age": 18,
+    "desc": "受験生です。めざすは東大。妥協はしません！",
+    "imgName": "user3"
+  },
+  {
+    "id": 4,
+    "name": "Ring Ring...",
+    "minority": "バイ",
+    "age": 16,
+    "desc": "H highschool/Dance/カラオケ/3代目/EXILE/5.26参戦！！！",
+    "imgName": "user4"
+  },
+  {
+    "id": 5,
+    "name": "Aiko Koyama",
+    "minority": "ビアン",
+    "age": 20,
+    "desc": "カメラが趣味です。いろんなあんこ内を巡ってます。",
+    "imgName": "user5"
+  },
+  {
+    "id": 6,
+    "name": "Yosshi",
+    "minority": "ゲイ",
+    "age": 27,
+    "desc": "京都府民です．",
+    "imgName": "user7"
+  },
+  {
+    "id": 7,
+    "name": "だいち",
+    "minority": "バイ",
+    "age": 24,
+    "desc": "Dance全国大会日本代表",
+    "imgName": "user8"
+  },
+  {
+    "id": 8,
+    "name": "そら",
+    "minority": "ビアン",
+    "age": 26,
+    "desc": "ボイパやってます！動画はホームページにあげているのでよかったら見てください！",
+    "imgName": "user9"
+  },
+  {
+    "id": 9,
+    "name": "おおのりょう",
+    "minority": "ゲイ",
+    "age": 32,
+    "desc": "私は全てを知っている。",
+    "imgName": "user10"
+  },
+  {
+    "id": 10,
+    "name": "ふーじー",
+    "minority": "トランスジェンダー",
+    "age": 22,
+    "desc": "◯◯中学→◯◯高校→◯◯大学",
+    "imgName": "user6"
+  },
+  {
+    "id": 11,
+    "name": "ヒーロー見参",
+    "minority": "ゲイ",
+    "age": 15,
+    "desc": "◯◯中学校 スポーツ万能 反動で勉強からは見捨てられました （笑）",
+    "imgName": "user11"
+  },
+  {
+    "id": 12,
+    "name": "ドデカミン",
+    "minority": "トランスジェンダー",
+    "age": 17,
+    "desc": "毎日ドデカミン注入 ドデカミン愛好団体製作予定",
+    "imgName": "user15"
+  },
+  {
+    "id": 13,
+    "name": "ぷーちゃん",
+    "minority": "レズビアン",
+    "age": 18,
+    "desc": "◯◯高校→next◯◯大学→夢 看護師",
+    "imgName": "user17"
+  },
+  {
+    "id": 14,
+    "name": "カメ",
+    "minority": "ゲイ",
+    "age": 40,
+    "desc": "カメ仙人です。",
+    "imgName": "user13"
+  },
+  {
+    "id": 15,
+    "name": "嵐ック",
+    "minority": "トランスジェンダー",
+    "age": 38,
+    "desc": "ジャニーズを愛し始めてはや20年。これからも応援してます！",
+    "imgName": "user19"
+  },
+  {
+    "id": 16,
+    "name": "ゆーき",
+    "minority": "バイ",
+    "age": 17,
+    "desc": "野球してます！去年関東ベスト8 今年は甲子園にでる！",
+    "imgName": "user14"
+  },
+  {
+    "id": 17,
+    "name": "社会人太郎",
+    "minority": "バイ",
+    "age": 58,
+    "desc": "もうすぐ定年",
+    "imgName": "user12"
+  },
+  {
+    "id": 18,
+    "name": "魔法少女ゆきりん♩♩",
+    "minority": "レズビアン",
+    "age": 15,
+    "desc": "おジャ魔女どれみは私の憧れ",
+    "imgName": "user18"
+  },
+  {
+    "id": 19,
+    "name": "佐々木大輝",
+    "minority": "バイ",
+    "age": 34,
+    "desc": "ジムトレーナーしてます。独身です。",
+    "imgName": "user16"
+  },
+  {
+    "id": 20,
+    "name": "しんぺー",
+    "minority": "ゲイ",
+    "age": 43,
+    "desc": "マスターズで走ります",
+    "imgName": "user20"
+  }
+]
