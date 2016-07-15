@@ -44,7 +44,6 @@ class CategoryRow: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollec
     func filterGroupByCategory() {
         let result = realm.objects(Group)
         for re in result {
-            print(re)
             if category == re.category.id {
                 groups.append(re)
             }

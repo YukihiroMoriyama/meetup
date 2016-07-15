@@ -27,6 +27,8 @@ class EventInfoTableViewController: UITableViewController {
 //        test.addUsers()
 //        test.addEvent()
 //        test.addCategory()
+//        test.addFriend()
+//        test.addGroup()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,8 +63,8 @@ class EventInfoTableViewController: UITableViewController {
 //        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "Cell")
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InfoCustomCell
-        
-        let event = realm.objects(Event)[indexPath.row]
+        let events = realm.objects(Event).sorted("date", ascending: false)
+        let event = events[indexPath.row]
 
         cell.circleImageView.image = UIImage(named: event.imgName + ".jpg")
         cell.titleLabel.text = event.name
@@ -76,14 +78,15 @@ class EventInfoTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("toEventDetailViewController", sender: indexPath.row)
+        let event = realm.objects(Event).sorted("date", ascending: false)[indexPath.row]
+        performSegueWithIdentifier("toEventDetailViewController", sender: event.id)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.identifier == "toEventDetailViewController") {
             let vc: EventDetailViewController = (segue.destinationViewController as? EventDetailViewController)!
-            vc.index = sender as! Int
+            vc.selectedId = sender as! Int
         }
 
     }

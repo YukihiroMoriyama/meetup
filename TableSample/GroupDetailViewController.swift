@@ -35,14 +35,16 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = memberCollectionView.dequeueReusableCellWithReuseIdentifier("member", forIndexPath: indexPath) as! MemberCell
         
-        cell.circleImageView.image = UIImage(named: "imgres.jpg")
+        let array = ["user5", "user6", "user7", "user8"]
+        
+        cell.circleImageView.image = UIImage(named: array[indexPath.row % 4] + ".jpg")
         cell.label.text = "1"
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 4
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

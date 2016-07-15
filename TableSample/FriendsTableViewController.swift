@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendsTableViewController: UITableViewController {
 
+    let realm = try! Realm()
+    
+    var selectedUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +39,7 @@ class FriendsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return realm.objects(Friend).count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -42,8 +47,10 @@ class FriendsTableViewController: UITableViewController {
         
 //        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "ChatCell")
         
-        cell.circleImageView.image = UIImage(named: "kao_l2_1.jpg")
-        cell.titleLabel.text = "けいこ"
+        let friend = realm.objects(Friend)[indexPath.row]
+        
+        cell.circleImageView.image = UIImage(named: (friend.user?.imgName)! + ".jpg")
+        cell.titleLabel.text = friend.user?.name
 //        cell.imageView?.image = UIImage(named: "kao_l2_1.jpg")
 //        cell.textLabel?.text = "けいこ"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -52,12 +59,16 @@ class FriendsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedUser = realm.objects(Friend)[indexPath.row].user
         performSegueWithIdentifier("toChatViewController", sender: nil)
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let chatVC: ChatViewController = segue.destinationViewController as? ChatViewController {
+            chatVC.otherUser = selectedUser
+        }
+        
+    }
     
     /*
     // Override to support conditional editing of the table view.

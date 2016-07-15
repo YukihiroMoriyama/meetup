@@ -28,6 +28,7 @@ extension Event: Mappable {
         id <- map["id"]
         name <- map["name"]
         desc <- map["desc"]
+        date <- (map["date"], CustomDateFormatTransform(formatString: "yyyy-MM-dd"))
         imgName <- map["imgName"]
     }
 }

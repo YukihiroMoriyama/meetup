@@ -10,6 +10,7 @@ import UIKit
 import JSQMessagesViewController
 
 class ChatViewController: JSQMessagesViewController {
+    var otherUser: User?
     var messages: [JSQMessage]?
     var incomingBubble: JSQMessagesBubbleImage!
     var outgoingBubble: JSQMessagesBubbleImage!
@@ -20,9 +21,11 @@ class ChatViewController: JSQMessagesViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        print(otherUser)
+        
         //自分のsenderId, senderDisokayNameを設定
-        self.senderId = "user1"
-        self.senderDisplayName = "hoge"
+        self.senderId = "my"
+        self.senderDisplayName = "yukihiro"
         
         //吹き出しの設定
         let bubbleFactory = JSQMessagesBubbleImageFactory()
@@ -30,7 +33,7 @@ class ChatViewController: JSQMessagesViewController {
         self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
         
         //アバターの設定
-        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "kao_l2_1.jpg")!, diameter: 128) // 相手
+        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: (otherUser?.imgName)! + ".jpg")!, diameter: 128) // 相手
         self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "kao_l1_2.jpg")!, diameter: 128) // 自分 (User)から取ってくる
         
         //メッセージデータの配列を初期化
@@ -86,7 +89,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     func didFinishMessageTimer(sender: NSTimer) {
-        let message = JSQMessage(senderId: "user2", displayName: "underscore", text: "Hello!")
+        let message = JSQMessage(senderId: "user\((otherUser?.id)!)", displayName: (otherUser?.name)!, text: "Hello!")
         self.messages?.append(message)
         self.finishReceivingMessageAnimated(true)
     }

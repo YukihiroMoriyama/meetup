@@ -11,5 +11,6 @@ import RealmSwift
 import JSQMessagesViewController
 
 class Friend: Object {
+    dynamic var id: Int = 0
     dynamic var user: User?
 }

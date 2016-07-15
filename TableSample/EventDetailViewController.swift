@@ -12,7 +12,7 @@ import RealmSwift
 class EventDetailViewController: UIViewController {
     
     let realm = try! Realm()
-    var index: Int!
+    var selectedId: Int!
     
     @IBOutlet var titleNavigationItem: UINavigationItem!
     @IBOutlet var descriptionTextView: UITextView!
@@ -22,12 +22,12 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let event = realm.objects(Event)[index]
-        
-        titleNavigationItem.title = event.name
-        descriptionTextView.text = event.desc
-        dateLabel.text = dateString(event.date)
-        imageView.image = UIImage(named: event.imgName + ".jpg")
+        if let event = realm.objects(Event).filter("id == \(selectedId)").first {
+            titleNavigationItem.title = event.name
+            descriptionTextView.text = event.desc
+            dateLabel.text = dateString(event.date)
+            imageView.image = UIImage(named: event.imgName + ".jpg")
+        }
     }
     
     override func didReceiveMemoryWarning() {
