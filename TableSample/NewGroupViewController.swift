@@ -27,7 +27,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         self.titleTextField.delegate = self
 
-        let search = realm.objects(Category).filter("id > 2")
+        let search = realm.objects(Category)
         for c in search {
             pickerData.append(c.name)
         }
@@ -53,8 +53,8 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCategory = row + 3
-        print(selectedCategory)
+        selectedCategory = row + 1
+//        print(selectedCategory)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -71,7 +71,7 @@ class NewGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let group = Group()
         group.id = realm.objects(Group).count + 1
         group.name = titleTextField.text!
-        group.imgName = "cafe_2" // TODO: 選択した画像にする
+        group.imgName = "tutenkaku" // TODO: 選択した画像にする
         
         group.category = realm.objects(Category).filter("id == \(selectedCategory)").first
         

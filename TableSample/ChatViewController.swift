@@ -21,7 +21,7 @@ class ChatViewController: JSQMessagesViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print(otherUser)
+//        print(otherUser)
         
         //自分のsenderId, senderDisokayNameを設定
         self.senderId = "my"
@@ -34,7 +34,7 @@ class ChatViewController: JSQMessagesViewController {
         
         //アバターの設定
         self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: (otherUser?.imgName)! + ".jpg")!, diameter: 128) // 相手
-        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "kao_l1_2.jpg")!, diameter: 128) // 自分 (User)から取ってくる
+        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "yakyu.jpg")!, diameter: 128) // 自分 (User)から取ってくる
         
         //メッセージデータの配列を初期化
         self.messages = []
@@ -89,7 +89,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     func didFinishMessageTimer(sender: NSTimer) {
-        let message = JSQMessage(senderId: "user\((otherUser?.id)!)", displayName: (otherUser?.name)!, text: "Hello!")
+        let message = JSQMessage(senderId: "user\((otherUser?.id)!)", displayName: (otherUser?.name)!, text: "こんにちは！")
         self.messages?.append(message)
         self.finishReceivingMessageAnimated(true)
     }

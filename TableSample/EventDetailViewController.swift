@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let realm = try! Realm()
     var selectedId: Int!
@@ -17,10 +17,15 @@ class EventDetailViewController: UIViewController {
     @IBOutlet var titleNavigationItem: UINavigationItem!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView: CircleImageView!
+    
+    @IBOutlet var userCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userCollectionView.delegate = self
+        userCollectionView.dataSource = self
         
         if let event = realm.objects(Event).filter("id == \(selectedId)").first {
             titleNavigationItem.title = event.name
@@ -33,6 +38,31 @@ class EventDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+       let cell = collectionView.dequeueReusableCellWithReuseIdentifier("memberCell", forIndexPath: indexPath) as! MemberCell
+        
+        let n = arc4random() % 20 + 1;
+        
+        let user = realm.objects(User).filter("id == \(n)").first
+        
+//        print(user)
+        
+        cell.circleImageView.image = UIImage(named: (user?.imgName)! + ".jpg")
+        
+        
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
     
     func dateString(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()

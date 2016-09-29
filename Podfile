@@ -8,4 +8,5 @@ target 'TableSample' do
  pod "RMPScrollingMenuBarController"
  pod 'ObjectMapper', '~> 1.3'
  pod 'SwiftyJSON'
+ pod 'SRGAppVerWatcher'
 end

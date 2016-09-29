@@ -32,13 +32,19 @@ class CategoryRow: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollec
         
         cell.group = groups[indexPath.row]
         cell.circleImageView.image = UIImage(named: "\(groups[indexPath.row].imgName).jpg")
+        
+//        cell.circleImageView.layer.borderWidth = 0
         cell.titleLabel.text = "\(groups[indexPath.row].name)"
 
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("groupCell", forIndexPath: indexPath) as! GroupCell
+//        cell.circleImageView.layer.borderColor = UIColor.redColor().CGColor
+//        cell.circleImageView.layer.borderWidth = 3
+//        groupCollectionView.reloadData()
+//        print(indexPath.row)
     }
     
     func filterGroupByCategory() {

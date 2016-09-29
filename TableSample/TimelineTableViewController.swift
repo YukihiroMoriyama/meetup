@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TimelineTableViewController: UITableViewController {
-
+    
+    let realm = try! Realm()
+    let talk: [String] = ["展示会なうだよー", "ファーストガンダムが展示されるみたい(｀・ω・´)", "この日を待ちわびていましたよｗ", "ですね", "今日のガンダム展楽しみですね！"]
+    let users: [String] = ["10", "16", "3", "2", "1"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +22,6 @@ class TimelineTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +33,27 @@ class TimelineTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return talk.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TimelineCell
+        
+        let user = realm.objects(User).filter("id = \(users[indexPath.row])").first
+        
+        cell.circleImageView.image = UIImage(named: (user?.imgName)! + ".jpg")
+        cell.nameLabel.text = (user?.name)!
+        cell.contentTextView.text = talk[indexPath.row]
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

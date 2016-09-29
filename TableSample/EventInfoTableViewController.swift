@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SRGAppVerWatcher
 
 class EventInfoTableViewController: UITableViewController {
     
@@ -23,13 +24,18 @@ class EventInfoTableViewController: UITableViewController {
 //        })
 //        Realm.Configuration.defaultConfiguration = config
         
-//        let test = Test()
-//        test.addUsers()
-//        test.addEvent()
-//        test.addCategory()
-//        test.addFriend()
-//        test.addGroup()
-
+        SRGAppVerWatcher.sharedWatcher().executeOnceAfterInstall { 
+            let test = Test()
+            test.addUsers()
+            test.addEvent()
+            test.addCategory()
+            test.addFriend()
+            test.addGroup()
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

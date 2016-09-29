@@ -38,7 +38,10 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         let array = ["user5", "user6", "user7", "user8"]
         
         cell.circleImageView.image = UIImage(named: array[indexPath.row % 4] + ".jpg")
-        cell.label.text = "1"
+        
+        let n = arc4random() % 5 + 1;
+        
+        cell.label.text = "\(n)"
         
         return cell
     }
@@ -57,7 +60,7 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func join() {
-        print(group)
+//        print(group)
         
     }
 }
