@@ -1,0 +1,1 @@
+../../../SRGAppVerWatcher/Classes/SRGVersionRecord.h

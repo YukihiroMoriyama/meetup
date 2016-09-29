@@ -1,0 +1,6 @@
+framework module SRGAppVerWatcher {
+  umbrella header "SRGAppVerWatcher-umbrella.h"
+
+  export *
+  module * { export * }
+}
