@@ -28,6 +28,10 @@ class FriendsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        if (self.view.window == nil) {
+            print("解放")
+            self.view = nil
+        }
     }
 
     // MARK: - Table view data source

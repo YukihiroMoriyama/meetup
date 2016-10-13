@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        var dic = ["firstLaunching": true]
+        let dic = ["firstLaunching": true]
         defaults.registerDefaults(dic)
         
         return true

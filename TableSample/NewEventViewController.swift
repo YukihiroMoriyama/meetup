@@ -19,6 +19,10 @@ class NewEventViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        if (self.view.window == nil) {
+            print("解放")
+            self.view = nil
+        }
     }
     
     @IBAction func cancel() {

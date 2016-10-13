@@ -37,11 +37,16 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        if (self.view.window == nil) {
+            print("解放")
+            self.view = nil
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-       let cell = collectionView.dequeueReusableCellWithReuseIdentifier("memberCell", forIndexPath: indexPath) as! MemberCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("memberCell", forIndexPath: indexPath) as! MemberCell
         
+
         let n = arc4random() % 20 + 1;
         
         let user = realm.objects(User).filter("id == \(n)").first
@@ -49,7 +54,6 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 //        print(user)
         
         cell.circleImageView.image = UIImage(named: (user?.imgName)! + ".jpg")
-        
         
         return cell
     }

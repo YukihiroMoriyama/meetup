@@ -30,8 +30,11 @@ class CategoryRow: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("groupCell", forIndexPath: indexPath) as! GroupCell
         
-        cell.group = groups[indexPath.row]
-        cell.circleImageView.image = UIImage(named: "\(groups[indexPath.row].imgName).jpg")
+        autoreleasepool { 
+            cell.group = groups[indexPath.row]
+            cell.circleImageView.image = UIImage(named: "\(groups[indexPath.row].imgName).jpg")
+        }
+        
         
 //        cell.circleImageView.layer.borderWidth = 0
         cell.titleLabel.text = "\(groups[indexPath.row].name)"

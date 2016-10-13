@@ -27,6 +27,7 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     override func didReceiveMemoryWarning() {
+        print("解放")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -37,7 +38,10 @@ class GroupDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         
         let array = ["user5", "user6", "user7", "user8"]
         
-        cell.circleImageView.image = UIImage(named: array[indexPath.row % 4] + ".jpg")
+        autoreleasepool { 
+            cell.circleImageView.image = UIImage(named: array[indexPath.row % 4] + ".jpg")
+        }
+        
         
         let n = arc4random() % 5 + 1;
         

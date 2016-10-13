@@ -50,5 +50,9 @@ class GroupTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+        if (self.view.window == nil) {
+            print("解放")
+            self.view = nil
+        }
     }
 }
